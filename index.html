@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aura Audio | The Sound of Silence</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #050505;
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        .glass {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #fff 0%, #888 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-image-container {
+            position: relative;
+            transition: transform 0.5s ease-out;
+        }
+
+        .hero-image-container:hover {
+            transform: scale(1.02);
+        }
+
+        .feature-card {
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            background: rgba(255, 255, 255, 0.07);
+            transform: translateY(-5px);
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .floating {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .nav-link {
+            position: relative;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 1px;
+            bottom: -2px;
+            left: 0;
+            background-color: white;
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #050505;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #333;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #551;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass py-4 px-6 md:px-12 flex justify-between items-center">
+        <div class="text-2xl font-extrabold tracking-tighter uppercase">Aura</div>
+        <div class="hidden md:flex space-x-8 text-sm font-medium tracking-widest uppercase opacity-70">
+            <a href="#features" class="nav-link">Technology</a>
+            <a href="#specs" class="nav-link">Specs</a>
+            <a href="#reviews" class="nav-link">Reviews</a>
+            <a href="#" class="nav-link">Support</a>
+        </div>
+        <button class="bg-white text-black px-6 py-2 rounded-full text-xs font-bold uppercase hover:bg-gray-200 transition">
+            Buy Now
+        </button>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center justify-center pt-20 px-6">
+        <div class="absolute inset-0 overflow-hidden pointer-events-none">
+            <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500/10 blur-[120px] rounded-full"></div>
+            <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-500/10 blur-[120px] rounded-full"></div>
+        </div>
+
+        <div class="container mx-auto grid md:grid-cols-2 gap-12 items-center">
+            <div class="z-10">
+                <h1 class="text-6xl md:text-8xl font-extrabold leading-none mb-6 gradient-text">
+                    Pure <br> Sonic <br> Bliss.
+                </h1>
+                <p class="text-lg md:text-xl text-gray-400 mb-8 max-w-md leading-relaxed">
+                    Experience industry-leading noise cancellation and spatial audio that adapts to your environment.
+                </p>
+                <div class="flex space-x-4">
+                    <button class="bg-white text-black px-8 py-4 rounded-full font-bold hover:scale-105 transition">
+                        Order Now — $349
+                    </button>
+                    <button class="border border-white/20 hover:bg-white/5 px-8 py-4 rounded-full font-bold transition">
+                        Watch Film
+                    </button>
+                </div>
+            </div>
+
+            <div class="hero-image-container flex justify-center">
+                <!-- Using an inline SVG for the premium headphone look -->
+                <svg viewBox="0 0 200 200" class="w-full max-w-lg floating" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#333;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#000;stop-opacity:1" />
+                        </linearGradient>
+                    </defs>
+                    <!-- Headband -->
+                    <path d="M40,100 Q100,20 160,100" fill="none" stroke="url(#grad1)" stroke-width="12" stroke-linecap="round"/>
+                    <!-- Left Earcup -->
+                    <rect x="25" y="90" width="35" height="60" rx="15" fill="#1a1a1a" />
+                    <rect x="20" y="95" width="10" height="50" rx="5" fill="#222" />
+                    <!-- Right Earcup -->
+                    <rect x="140" y="90" width="35" height="60" rx="15" fill="#1a1a1a" />
+                    <rect x="170" y="95" width="10" height="50" rx="5" fill="#222" />
+                    <!-- Detail lines -->
+                    <line x1="42" y1="100" x2="42" y2="140" stroke="#333" stroke-width="2" />
+                    <line x1="158" y1="100" x2="158" y2="140" stroke="#333" stroke-width="2" />
+                </svg>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-24 px-6 bg-[#0a0a0a]">
+        <div class="container mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4">Engineered for Perfection</h2>
+                <p class="text-gray-500">Every detail meticulously crafted for your ears.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="feature-card p-8 rounded-3xl glass">
+                    <div class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-wind text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Active Noise Cancellation</h3>
+                    <p class="text-gray-400 leading-relaxed">Six microphones analyze ambient sound 1,000 times per second to create a pure listening bubble.</p>
+                </div>
+
+                <div class="feature-card p-8 rounded-3xl glass">
+                    <div class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-battery-full text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">40-Hour Battery Life</h3>
+                    <p class="text-gray-400 leading-relaxed">Listen all week on a single charge. 10 minutes of charging gives you 5 hours of playback.</p>
+                </div>
+
+                <div class="feature-card p-8 rounded-3xl glass">
+                    <div class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-broadcast-tower text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Spatial Audio</h3>
+                    <p class="text-gray-400 leading-relaxed">Dynamic head tracking turns movies and music into a theater-like experience that surrounds you.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technical Specs -->
+    <section id="specs" class="py-24 px-6">
+        <div class="container mx-auto flex flex-col md:flex-row gap-16 items-center">
+            <div class="md:w-1/2">
+                <h2 class="text-4xl font-bold mb-8">Technical Specifications</h2>
+                <div class="space-y-6">
+                    <div class="border-b border-white/10 pb-4 flex justify-between">
+                        <span class="text-gray-500 uppercase tracking-widest text-xs">Driver Type</span>
+                        <span class="font-medium">40mm Dynamic Neodymium</span>
+                    </div>
+                    <div class="border-b border-white/10 pb-4 flex justify-between">
+                        <span class="text-gray-500 uppercase tracking-widest text-xs">Frequency Response</span>
+                        <span class="font-medium">10Hz - 40kHz</span>
+                    </div>
+                    <div class="border-b border-white/10 pb-4 flex justify-between">
+                        <span class="text-gray-500 uppercase tracking-widest text-xs">Connectivity</span>
+                        <span class="font-medium">Bluetooth 5.3 & USB-C Audio</span>
+                    </div>
+                    <div class="border-b border-white/10 pb-4 flex justify-between">
+                        <span class="text-gray-500 uppercase tracking-widest text-xs">Weight</span>
+                        <span class="font-medium">254g</span>
+                    </div>
+                    <div class="border-b border-white/10 pb-4 flex justify-between">
+                        <span class="text-gray-500 uppercase tracking-widest text-xs">Codecs</span>
+                        <span class="font-medium">SBC, AAC, aptX Adaptive</span>
+                    </div>
+                </div>
+            </div>
+            <div class="md:w-1/2 rounded-3xl overflow-hidden glass p-12 flex justify-center items-center">
+                <div class="text-center">
+                   <i class="fas fa-microchip text-6xl mb-6 opacity-20"></i>
+                   <p class="text-xl font-light italic">"The H1-Aura chip handles over 9 billion operations per second to manage noise cancellation and audio fidelity."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter/CTA -->
+    <section class="py-24 px-6">
+        <div class="container mx-auto glass p-12 md:p-24 rounded-[40px] text-center relative overflow-hidden">
+             <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
+             <h2 class="text-4xl md:text-6xl font-bold mb-6">Ready to hear the difference?</h2>
+             <p class="text-gray-400 mb-10 max-w-xl mx-auto">Join 50,000+ audiophiles who have upgraded their daily listening experience.</p>
+             <div class="flex flex-col md:flex-row justify-center gap-4">
+                 <input type="email" placeholder="Enter your email" class="bg-white/5 border border-white/10 px-6 py-4 rounded-full md:w-80 outline-none focus:border-white/40 transition">
+                 <button class="bg-white text-black px-10 py-4 rounded-full font-bold hover:bg-gray-200 transition">Get Updates</button>
+             </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 px-6 border-t border-white/5">
+        <div class="container mx-auto grid md:grid-cols-4 gap-12">
+            <div>
+                <div class="text-xl font-bold mb-6">AURA AUDIO</div>
+                <p class="text-gray-500 text-sm">Defining the future of sound through innovation and design.</p>
+            </div>
+            <div>
+                <h4 class="font-bold mb-6 uppercase text-xs tracking-widest">Products</h4>
+                <ul class="text-gray-500 text-sm space-y-4">
+                    <li><a href="#" class="hover:text-white transition">Aura One</a></li>
+                    <li><a href="#" class="hover:text-white transition">Aura Air Buds</a></li>
+                    <li><a href="#" class="hover:text-white transition">Accessories</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold mb-6 uppercase text-xs tracking-widest">Company</h4>
+                <ul class="text-gray-500 text-sm space-y-4">
+                    <li><a href="#" class="hover:text-white transition">Our Story</a></li>
+                    <li><a href="#" class="hover:text-white transition">Careers</a></li>
+                    <li><a href="#" class="hover:text-white transition">Sustainability</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold mb-6 uppercase text-xs tracking-widest">Follow Us</h4>
+                <div class="flex space-x-4 text-gray-500">
+                    <a href="#" class="hover:text-white transition"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="hover:text-white transition"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="hover:text-white transition"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="container mx-auto mt-12 pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between text-gray-600 text-xs">
+            <p>&copy; 2024 Aura Audio Inc. All rights reserved.</p>
+            <div class="flex space-x-6 mt-4 md:mt-0">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scroll for nav links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Simple scroll animation for feature cards
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.feature-card').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'all 0.6s ease-out';
+            observer.observe(card);
+        });
+    </script>
+</body>
+</html>
